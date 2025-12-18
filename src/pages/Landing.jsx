@@ -10,6 +10,7 @@ import {
   Server,
   Users,
   Gauge,
+  ArrowRight,
 } from "lucide-react";
 
 function Landing() {
@@ -17,7 +18,7 @@ function Landing() {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
 
       {/* NAVBAR */}
-      <nav className="sticky top-0 z-50 bg-slate-900/60 backdrop-blur border-b border-white/10">
+      <nav className="sticky top-0 z-50 bg-slate-900/70 backdrop-blur border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <h1 className="text-xl font-bold tracking-wide flex items-center gap-2">
             <LayoutDashboard className="text-indigo-400" size={20} />
@@ -46,33 +47,32 @@ function Landing() {
       {/* HERO */}
       <section className="max-w-7xl mx-auto px-6 py-28 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <div>
-          <span className="inline-flex items-center gap-2 mb-4 px-4 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-sm">
+          <span className="inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full bg-indigo-500/10 text-indigo-400 text-sm font-medium">
             <Sparkles size={14} />
             Modern CRUD Platform
           </span>
 
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-            Manage Users <br />
-            <span className="text-indigo-400">The Modern Way</span>
+            Build & Manage Users <br />
+            <span className="text-indigo-400">With Confidence</span>
           </h2>
 
-          <p className="text-slate-400 max-w-lg mb-10">
-            A clean and modern CRUD application powered by React and
-            CodeIgniter 3. Built for performance, usability, and real-world
-            implementation.
+          <p className="text-slate-400 max-w-xl mb-10">
+            A modern user management system built using React and CodeIgniter 3.
+            Designed with clean UI, secure access, and real-world scalability in mind.
           </p>
 
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             <Link
               to="/register"
-              className="flex items-center gap-2 px-7 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-semibold transition"
+              className="inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-semibold transition"
             >
-              <UserPlus size={18} />
               Get Started
+              <ArrowRight size={18} />
             </Link>
             <Link
               to="/login"
-              className="flex items-center gap-2 px-7 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 transition"
+              className="inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 transition"
             >
               <LogIn size={18} />
               Login
@@ -82,13 +82,13 @@ function Landing() {
 
         {/* HERO CARD */}
         <div className="relative">
-          <div className="absolute -top-16 -left-16 w-48 h-48 bg-indigo-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-16 -right-16 w-48 h-48 bg-purple-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute -top-16 -left-16 w-52 h-52 bg-indigo-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-16 -right-16 w-52 h-52 bg-purple-500/20 rounded-full blur-3xl"></div>
 
           <div className="relative bg-slate-900/70 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-2xl">
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
               <ShieldCheck className="text-indigo-400" />
-              Core Benefits
+              Why This App?
             </h3>
 
             <ul className="space-y-4 text-slate-300 text-sm">
@@ -96,13 +96,13 @@ function Landing() {
                 <Gauge size={16} /> Fast & responsive UI
               </li>
               <li className="flex items-center gap-2">
-                <ShieldCheck size={16} /> Secure authentication
+                <ShieldCheck size={16} /> Secure protected routes
               </li>
               <li className="flex items-center gap-2">
-                <Sparkles size={16} /> Consistent modern design
+                <Sparkles size={16} /> Clean & consistent design
               </li>
               <li className="flex items-center gap-2">
-                <Database size={16} /> Ready for deployment
+                <Database size={16} /> Production-ready CRUD
               </li>
             </ul>
           </div>
@@ -111,15 +111,15 @@ function Landing() {
 
       {/* STATS */}
       <section className="border-y border-white/10 py-20">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
           {[
             { icon: <Users />, value: "100+", label: "Users Managed" },
-            { icon: <Code />, value: "4", label: "Core Features" },
-            { icon: <Sparkles />, value: "99%", label: "UI Consistency" },
+            { icon: <Code />, value: "CRUD", label: "Core Operations" },
+            { icon: <Sparkles />, value: "Modern", label: "UI Experience" },
             { icon: <LayoutDashboard />, value: "1", label: "Dashboard" },
           ].map((item, i) => (
             <div key={i}>
-              <div className="flex justify-center mb-2 text-indigo-400">
+              <div className="flex justify-center mb-3 text-indigo-400">
                 {item.icon}
               </div>
               <h3 className="text-3xl font-bold">{item.value}</h3>
@@ -131,8 +131,8 @@ function Landing() {
 
       {/* FEATURES */}
       <section className="max-w-7xl mx-auto px-6 py-24">
-        <h3 className="text-3xl font-bold text-center mb-14">
-          Features Overview
+        <h3 className="text-3xl font-bold text-center mb-16">
+          What You Get
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -140,17 +140,17 @@ function Landing() {
             {
               icon: <ShieldCheck />,
               title: "Authentication",
-              desc: "Protected routes & login system",
+              desc: "Login, register & protected dashboard access",
             },
             {
               icon: <Database />,
-              title: "CRUD Operations",
-              desc: "Create, update & delete data easily",
+              title: "CRUD System",
+              desc: "Create, update & delete data efficiently",
             },
             {
               icon: <Sparkles />,
-              title: "Modern UI",
-              desc: "Dark mode with glassmorphism design",
+              title: "Modern Interface",
+              desc: "Dark mode, glass effect & clean layout",
             },
           ].map((item, i) => (
             <div
@@ -180,7 +180,7 @@ function Landing() {
           ].map((tech, i) => (
             <div
               key={i}
-              className="bg-slate-900/60 border border-white/10 rounded-xl py-6 flex flex-col items-center gap-2 text-slate-300 text-sm font-semibold"
+              className="bg-slate-900/60 border border-white/10 rounded-xl py-6 flex flex-col items-center gap-3 text-slate-300 text-sm font-semibold"
             >
               <div className="text-indigo-400">{tech.icon}</div>
               {tech.label}
@@ -193,17 +193,17 @@ function Landing() {
       <section className="max-w-4xl mx-auto px-6 py-24 text-center">
         <div className="bg-slate-900/70 backdrop-blur border border-white/10 rounded-2xl p-12 shadow-2xl">
           <h3 className="text-3xl font-bold mb-4">
-            Ready to explore the dashboard?
+            Ready to use the dashboard?
           </h3>
           <p className="text-slate-400 mb-8">
-            Experience a clean and modern CRUD system built for real-world use.
+            Start managing users with a modern and secure system.
           </p>
           <Link
             to="/register"
             className="inline-flex items-center gap-2 px-10 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-semibold transition"
           >
-            <UserPlus size={18} />
             Create Account
+            <ArrowRight size={18} />
           </Link>
         </div>
       </section>

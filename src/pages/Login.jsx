@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 function Login() {
@@ -7,6 +7,9 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
+    useEffect(() => { 
+      document.title = "Login";
+    } , []);
 
   const submit = (e) => {
     e.preventDefault();
@@ -16,6 +19,7 @@ function Login() {
       localStorage.setItem("isLogin", "true");
       navigate("/dashboard");
     }
+
   };
 
   return (
