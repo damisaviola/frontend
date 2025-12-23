@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { useToast } from "../context/ToastContext";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -7,25 +8,34 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
-    useEffect(() => { 
+  const { showToast } = useToast();  
+  
+  useEffect(() => { 
       document.title = "Login";
     } , []);
+    
 
   const submit = (e) => {
     e.preventDefault();
 
-    if (email && password) {
+   if (email !== "admin@test.com" || password !== "123456") {
+    showToast("Email atau password salah", "error");
+    return;
+  }
 
-      localStorage.setItem("isLogin", "true");
+    localStorage.setItem("isLogin", "true");
+    showToast("Login berhasil 🚀", "success");
+    
+    setTimeout(() => {
       navigate("/dashboard");
-    }
+    }, 1500);
 
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 px-4">
       <div className="w-full max-w-md bg-slate-900/70 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl p-8">
-        
+        {/* Header */}  
         <h1 className="text-3xl font-bold text-white text-center mb-2">
           Welcome back 👋
         </h1>

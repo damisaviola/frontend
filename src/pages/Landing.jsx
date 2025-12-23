@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import {
   LogIn,
   UserPlus,
@@ -14,15 +15,19 @@ import {
 } from "lucide-react";
 
 function Landing() {
+  useEffect(() => { 
+      document.title = "Jogja Software Developer";
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
 
-      {/* NAVBAR */}
+   
       <nav className="sticky top-0 z-50 bg-slate-900/70 backdrop-blur border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <h1 className="text-xl font-bold tracking-wide flex items-center gap-2">
             <LayoutDashboard className="text-indigo-400" size={20} />
-            CRUD<span className="text-indigo-400">App</span>
+            <span className="text-indigo-400">App</span>
           </h1>
 
           <div className="flex gap-3">
