@@ -16,7 +16,7 @@ const barColor = {
 function Toast({ type = "info", message, duration = 3000, onClose }) {
   const [progress, setProgress] = useState(100);
 
-  // 🔹 Progress bar animation
+
   useEffect(() => {
     const interval = 30;
     const step = 100 / (duration / interval);
@@ -28,7 +28,7 @@ function Toast({ type = "info", message, duration = 3000, onClose }) {
     return () => clearInterval(timer);
   }, [duration]);
 
-  // 🔹 Auto close (AMAN)
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       onClose();
