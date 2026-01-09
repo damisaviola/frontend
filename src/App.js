@@ -4,9 +4,11 @@ import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
+import DashboardKios from "./pages/DashboardKios";
 import Profile from "./pages/Profile";
 import Osint from "./pages/Osint";
 import NotFound from "./pages/NotFound404";
+import Produk from "./pages/Produk";
 
 import ProtectedRoute from "./routes/ProtectedRoute";
 
@@ -31,6 +33,24 @@ function App() {
       />
 
       <Route
+        path="/dashboard-kios"
+        element={
+          <ProtectedRoute>
+            <DashboardKios />
+          </ProtectedRoute>
+        }
+      />
+      
+      <Route
+      path="/produk"
+      element={
+        <ProtectedRoute>
+          <Produk />
+        </ProtectedRoute>
+      }
+    />
+
+      <Route
         path="/profile"
         element={
           <ProtectedRoute>
@@ -40,7 +60,9 @@ function App() {
       />
 
       {/* 404 */}
-      <Route path="*" element={<NotFound />} />
+      <Route path="*"
+        element={<NotFound />}
+      />
 
     </Routes>
   );
